@@ -1,26 +1,22 @@
-env:
- 
+language: python
 
-linux: &linux
-   os: linux
-   dist: xenial
-   language: python
-   python: "3.7"
-osx: &osx
-   os: osx
-   language: generic
 matrix:
-   include:
-      - <<: *linux
-      - <<: *osx
-        osx_image: xcode9.4
-      - <<: *osx
-        osx_image: xcode10
+  include:
+    - name: "Python 3.7 on Xenial Linux"
+      python: 3.7
+    - name: "Python 3.6 on Xenial Linux"
+      python: 3.6
+    - name: "Python 3.5 on Xenial Linux"
+      python: 3.5
+    - name: "Python 2.7 on Xenial Linux"
+      python: 2.7
+    - name: "Python 3.7.4 on macOS"
+      os: osx
+      osx_image: xcode11    # Python 3.7.4 running on macOS 10.14.4
+      language: shell       # 'language: python' is an error on Travis CI macOS
 
 install:
-  - chmod +x .ci/install.sh
-  - ./.ci/install.sh
+  - pip3 install python-libsbml-experimental || pip install python-libsbml-experimental
 
 script:
-  - chmod +x .ci/run.sh
-  - ./.ci/run.sh
+  - python3 test_render.py || python test_render.py
