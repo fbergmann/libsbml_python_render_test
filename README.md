@@ -1,4 +1,6 @@
 ## LibSBML Render Test project
+[![Build Status](https://travis-ci.org/fbergmann/libsbml_python_render_test.svg?branch=master)](https://travis-ci.org/fbergmann/libsbml_python_render_test) [![Build status](https://ci.appveyor.com/api/projects/status/86ul7grg08msdm6n?svg=true)](https://ci.appveyor.com/project/FrankBergmann/libsbml-python-render-test)
+
 This project tests the libsbml render package, to ensure all methods are there, and things are working as they should be. 
 
 To run the unit tests contained here, create a new virtual environment with the python version of your choice and run `python test_render.py`
