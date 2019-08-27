@@ -31,6 +31,17 @@ Without conda, you'd create an environment like so (on windows):
 	pip install python-libsbml-experimental
 	python test_render.py
 
+### using pyenv
+using pyenv you'd do: 
+
+    pyenv install 3.7.1
+    pyenv virtualenv 3.7.1 libsbml
+    pyenv rehash
+    pyenv activate libsbml
+	pip install python-libsbml-experimental
+	python test_render.py
+
+
 
 ## License 
 This project is open source and freely available under the [Simplified BSD](http://opensource.org/licenses/BSD-2-Clause) license. Should that license not meet your needs, please contact me. 
