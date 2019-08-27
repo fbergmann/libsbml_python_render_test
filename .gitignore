@@ -1,0 +1,8 @@
+/libsbml_*/
+/venv/
+.pyc
+
+.idea
+.vs
+.vscode
+
