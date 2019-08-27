@@ -25,7 +25,8 @@ class TestRender(unittest.TestCase):
     def test_sbase_has_read(self):
         compartment = libsbml.Compartment(3, 1)
         assert compartment is not None
-        stream = libsbml.XMLInputStream('<compartment id="vol1" name="compartment 1" size="2.0" />', False)
+        stream = libsbml.XMLInputStream("""<?xml version="1.0" encoding="utf-8"?>
+        <compartment id="vol1" name="compartment 1" size="2.0" />""", False)
         compartment.read(stream)
         assert compartment.id == 'vol1'
         assert compartment.name == 'compartment 1'
@@ -33,7 +34,7 @@ class TestRender(unittest.TestCase):
 
     def test_downcast_polygon(self):
         group = libsbml.RenderGroup(3, 1)
-        stream = libsbml.XMLInputStream("""
+        stream = libsbml.XMLInputStream("""<?xml version="1.0" encoding="utf-8"?>
       <g stroke="black" stroke-width="0.1" fill="black">
         <polygon>
           <listOfElements>
